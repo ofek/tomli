@@ -1,9 +1,9 @@
 from __future__ import annotations
 
-from collections.abc import Callable, Iterable
+from collections.abc import Iterable
 import string
 from types import MappingProxyType
-from typing import Any, BinaryIO, NamedTuple, Tuple
+from typing import Any, BinaryIO, Callable, NamedTuple, Tuple
 import warnings
 
 from tomli._re import (
@@ -46,9 +46,11 @@ BASIC_STR_ESCAPE_REPLACEMENTS = MappingProxyType(
 )
 
 # Type annotations
-ParseFloat = Callable[[str], Any]
-Key = Tuple[str, ...]
 Pos = int
+# Use `collections.abc.Callable` when min Python is 3.9
+ParseFloat = Callable[[str], Any]
+# use `tuple` when min Python is 3.9
+Key = Tuple[str, ...]
 
 
 class TOMLDecodeError(ValueError):
