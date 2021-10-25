@@ -3,10 +3,9 @@ from __future__ import annotations
 from datetime import date, datetime, time, timedelta, timezone, tzinfo
 from functools import lru_cache
 import re
-from typing import TYPE_CHECKING, Any
+from typing import Any
 
-if TYPE_CHECKING:
-    from tomli._parser import ParseFloat
+from tomli._types import ParseFloat
 
 # E.g.
 # - 00:32:00.999999

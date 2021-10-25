@@ -3,7 +3,7 @@ from __future__ import annotations
 from collections.abc import Iterable
 import string
 from types import MappingProxyType
-from typing import Any, BinaryIO, Callable, NamedTuple, Tuple
+from typing import Any, BinaryIO, NamedTuple
 import warnings
 
 from tomli._re import (
@@ -14,6 +14,7 @@ from tomli._re import (
     match_to_localtime,
     match_to_number,
 )
+from tomli._types import Key, ParseFloat, Pos
 
 ASCII_CTRL = frozenset(chr(i) for i in range(32)) | frozenset(chr(127))
 
@@ -44,13 +45,6 @@ BASIC_STR_ESCAPE_REPLACEMENTS = MappingProxyType(
         "\\\\": "\u005C",  # backslash
     }
 )
-
-# Type annotations
-Pos = int
-# Use `collections.abc.Callable` when min Python is 3.9
-ParseFloat = Callable[[str], Any]
-# use `tuple` when min Python is 3.9
-Key = Tuple[str, ...]
 
 
 class TOMLDecodeError(ValueError):
