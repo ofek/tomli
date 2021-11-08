@@ -8,7 +8,7 @@ repos:
     - mdformat-gfm
     - mdformat-black
 - repo: https://github.com/asottile/yesqa
-  rev: 644ede78511c02fc6f8e03e014cc1ddcfbf1e1f5  # frozen: v1.2.3
+  rev: 35cf7dc24fa922927caded7a21b2a8cb04bf8e10  # frozen: v1.3.0
   hooks:
   - id: yesqa
     additional_dependencies:
@@ -16,11 +16,11 @@ repos:
     - flake8-builtins
     - flake8-comprehensions
 - repo: https://github.com/PyCQA/isort
-  rev: fd5ba70665a37ec301a1f714ed09336048b3be63  # frozen: 5.9.3
+  rev: c154ecff496bf9309eaf5d887f4aa4a0abba28a2  # frozen: 5.10.0
   hooks:
   - id: isort
 - repo: https://github.com/psf/black
-  rev: 911470a610e47d9da5ea938b0887c3df62819b85  # frozen: 21.9b0
+  rev: 64c8be01f0cfedc94cb1c9ebd342ea77cafbb78a  # frozen: 21.10b0
   hooks:
   - id: black
 - repo: https://github.com/myint/docformatter
